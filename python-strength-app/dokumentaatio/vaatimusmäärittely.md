@@ -12,7 +12,7 @@ Sovelluksella on vain yksi käyttäjärooli eli _normaali käyttäjä_.
 ## Käyttöliittymäluonnos
 
 Sovellus koostuu neljästä näkymästä: 
-![Käyttöliittymä hahmotelma](/../kuvat/kayttoliittyma_hahmotelma.jpg)
+![Käyttöliittymä hahmotelma](/kuvat/kayttoliittyma_hahmotelma.jpg)
 
 Sovellus aukeaa kirjautumisvalikkoon, josta voi siirtyä joko uuden käyttäjän luomisvalikkoon tai kirjautumisen jälkeen näkyvään aloitusvalikkoon.
 Aloitusvalikosta voi siirtyä valitsemansa urheilusuorituksen suorituslistaan, jossa on listattu kaikki kyseisen urheilusuorituksen suoritukset. Suorituslistasta pääsee takaisin aloitusvalikkoon.
