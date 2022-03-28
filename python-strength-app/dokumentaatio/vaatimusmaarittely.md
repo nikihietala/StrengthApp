@@ -7,7 +7,7 @@ Sovellus tarkoitettu voimailulajien suoritusten seurantaan.
 
 ## Käyttäjät
 
-Sovelluksella on vain yksi käyttäjärooli eli _normaali käyttäjä_.
+Sovelluksella on vain yksi käyttäjärooli: _normaali käyttäjä_.
 
 ## Käyttöliittymäluonnos
 
