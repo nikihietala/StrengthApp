@@ -1,6 +1,12 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Ohjelmistotekniikka, harjoitustyö (StrengthApp)
 
-## Tehtävät
+Sovelluksen avulla käyttäjät pystyvät seuraamaan voimailulajien suorituksiaan.
+
+## Dokumentaatio
+- [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](./dokumentaatio/tyoaikakirjanpito.md)
+
+## Tehtävät (Laskarit)
 
 
 ### Viikot
