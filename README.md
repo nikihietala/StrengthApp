@@ -19,4 +19,6 @@ Sovelluksen avulla käyttäjät pystyvät seuraamaan voimailulajien suorituksiaa
 
 [*Viikko2*](./laskarit/viikko2)
 
+[*Viikko3*](./laskarit/viikko3)
+
 
