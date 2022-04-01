@@ -12,9 +12,11 @@
 		Ruutu <-- Asemat_ja_laitokset
 		Ruutu <-- Normaalit_kadut
 		Sattuma_ja_Yhteismaa "1" -- "1" Kortti
-		Pelaaja .. Normaalit_kadut
+		Pelaaja -- Normaalit_kadut
 		Normaalit_kadut "1" -- "0-4" Talo
 		Normaalit_kadut "1" -- "0-1" Hotelli
+		Monopoli .. Vankila
+		Monopoli .. Aloitusruutu
 		class Monopoli{
 			onkoVankila()
 			onkoAloitusruutu()
