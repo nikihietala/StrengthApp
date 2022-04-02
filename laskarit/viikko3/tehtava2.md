@@ -1,11 +1,11 @@
 ```mermaid
 	classDiagram
-		Monopoli "0-1" --> "1" Pelilauta
-		Monopoli "0-1" --> "2-8" Pelaaja
+		Monopoli "0..1" --> "1" Pelilauta
+		Monopoli "0..1" --> "2..8" Pelaaja
 		Pelilauta "1" -- "40" Ruutu
-		Monopoli "0-1" --> "2" Noppa
+		Monopoli "0..1" --> "2" Noppa
 		Pelaaja "1" -- "1" Pelinappula
-		Pelinappula "0-8" -- "1" Ruutu
+		Pelinappula "0..8" -- "1" Ruutu
 		Ruutu <-- Aloitusruutu
 		Ruutu <-- Vankila
 		Ruutu <-- Sattuma_ja_Yhteismaa
@@ -13,8 +13,8 @@
 		Ruutu <-- Normaalit_kadut
 		Sattuma_ja_Yhteismaa "1" -- "1" Kortti
 		Pelaaja -- Normaalit_kadut
-		Normaalit_kadut "1" -- "0-4" Talo
-		Normaalit_kadut "1" -- "0-1" Hotelli
+		Normaalit_kadut "1" -- "0..4" Talo
+		Normaalit_kadut "1" -- "0..1" Hotelli
 		Monopoli .. Vankila
 		Monopoli .. Aloitusruutu
 		class Monopoli{

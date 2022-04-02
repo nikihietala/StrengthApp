@@ -1,11 +1,11 @@
 ```mermaid
 	classDiagram
-		Monopoli "0-1" --> "1" Pelilauta
-		Monopoli "0-1" --> "2-8" Pelaaja
+		Monopoli "0..1" --> "1" Pelilauta
+		Monopoli "0..1" --> "2..8" Pelaaja
 		Pelilauta "1" -- "40" Ruutu
-		Monopoli "0-1" --> "2" Noppa
+		Monopoli "0..1" --> "2" Noppa
 		Pelaaja "1" -- "1" Pelinappula
-		Pelinappula "0-8" -- "1" Ruutu
+		Pelinappula "0..8" -- "1" Ruutu
 		class Monopoli{
 		}
 		class Noppa{
