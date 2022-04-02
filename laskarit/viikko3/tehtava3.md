@@ -8,7 +8,7 @@
 		Machine->>Engine: Engine(self._tank)
 		main->>Machine: drive()
 		Machine->>Engine: start()
-		Engine<<-FuelTank: consume(5)
+		Engine->>FuelTank: consume(5)
 		Machine->>Engine: is_running()
 		Engine-->Machine: true
 		Machine->>Engine: use_energy()
