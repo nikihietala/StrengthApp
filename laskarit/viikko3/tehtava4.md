@@ -8,16 +8,16 @@
 		main->>laitehallinto: lisaa_lukija(bussi244)
 		main->>lippu_luukku: osta_matkakortti("Kalle")
 		lippu_luukku->>kallen_kortti: uusi_kortti = Matkakortti(Kalle)
-		kallen_kortti-->>main: a
-		main->>rautatietori: a
+		kallen_kortti-->>main: 
+		main->>rautatietori: 
 		rautatietori->>laitehallinto: lataa_arvoa(kallen_kortti, 3)
 		laitehallinto->>kallen_kortti: kasvata_arvoa(3)
-		kallen_kortti-->>main: a
-		main->>ratikka6: a
+		kallen_kortti-->>main: 
+		main->>ratikka6: 
 		ratikka6->>laitehallinto: osta_lippu(kallen_kortti,0)
 		laitehallinto->>kallen_kortti: vahenna_arvoa(1.5)
 		kallen_kortti-->>main: true
-		main->>bussi244: a
+		main->>bussi244: 
 		bussi244->>laitehallinto: osta_lippu(kallen_kortti,2)
 		laitehallinto-->>main: false	
 ```
