@@ -1,10 +1,13 @@
 import tkinter as tk
+from tkinter import messagebox
 
 class CreateNewUserView:
     def __init__(self, root, press_back_to_login):
         self._root = root
         self._frame = None
         self._press_back_to_login = press_back_to_login
+        self._username_entry = None
+        self._password_entry = None
         self._initialize()
 
     def pack(self):
@@ -18,7 +21,10 @@ class CreateNewUserView:
         password = self._password.entry.get()
 
         if len(username) < 4 or len(password) < 6:
-            tk.messagebox.showinfo("Error","Username or password too short!")
+            messagebox.showinfo("Error","Username or password too short!")
+            return
+        
+
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
@@ -40,3 +46,6 @@ class CreateNewUserView:
 
         create_button = tk.Button(master=self._frame, text="CREATE(go back to login)",command=self._press_back_to_login)
         create_button.pack(pady=10)
+
+
+    

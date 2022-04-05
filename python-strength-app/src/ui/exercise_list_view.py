@@ -24,7 +24,7 @@ class ExerciseListView:
         back_button = tk.Button(master=self._frame, text="BACK TO LOGIN",command=self._press_back_to_login)
         back_button.pack(pady=10)
 
-        intro_text = tk.Label(master=self._frame, text="Choose your exercise.")
+        intro_text = tk.Label(master=self._frame, text="Choose your exercise.", font=("Arial", 10, "bold"))
         intro_text.pack(side=tk.TOP, anchor=tk.NW, pady=15)
 
         squat_button = tk.Button(master=self._frame, text="SQUAT", command=self._press_squat)

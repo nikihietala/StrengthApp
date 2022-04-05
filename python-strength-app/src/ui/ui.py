@@ -1,4 +1,6 @@
 import tkinter as tk
+from csv import *
+from tkinter import messagebox
 from login_view import LoginView
 from create_new_user_view import CreateNewUserView
 from exercise_list_view import ExerciseListView
@@ -45,6 +47,7 @@ class UI:
     
     def _press_back_to_login(self):
         self._show_login_view()
+    
 
     def _show_login_view(self):
         self._hide_current_view()
@@ -110,7 +113,7 @@ class UI:
             self._press_login
         )
 
-        self._current_view.pack()  
+        self._current_view.pack()
 
     def _show_shoulder_press_view(self):
         self._hide_current_view()
@@ -130,7 +133,9 @@ class UI:
             self._press_login
         )
 
-        self._current_view.pack()       
+        self._current_view.pack()
+
+
 
 window = tk.Tk()
 window.title("StrengthApp")
