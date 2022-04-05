@@ -1,13 +1,14 @@
 import tkinter as tk
 from csv import *
-from login_view import LoginView
-from create_new_user_view import CreateNewUserView
-from exercise_list_view import ExerciseListView
-from squat_view import SquatView
-from deadlift_view import DeadliftView
-from bench_press_view import BenchPressView
-from shoulder_press_view import ShoulderPressView
-from pull_up_view import PullUpView
+from ui.login_view import LoginView
+from ui.create_new_user_view import CreateNewUserView
+from ui.exercise_list_view import ExerciseListView
+from ui.squat_view import SquatView
+from ui.deadlift_view import DeadliftView
+from ui.bench_press_view import BenchPressView
+from ui.shoulder_press_view import ShoulderPressView
+from ui.pull_up_view import PullUpView
+from ui.squat_data import SquatData
 
 class UI:
     def __init__(self, root):
@@ -47,7 +48,9 @@ class UI:
     def _press_back_to_login(self):
         self._show_login_view()
     
-
+    def _press_squat_data(self):
+        self._show_squat_data()
+    
     def _show_login_view(self):
         self._hide_current_view()
 
@@ -89,7 +92,8 @@ class UI:
 
         self._current_view = SquatView(
             self._root,
-            self._press_login
+            self._press_login,
+            self._press_squat_data
         )
 
         self._current_view.pack()
@@ -133,12 +137,13 @@ class UI:
         )
 
         self._current_view.pack()
+    
+    def _show_squat_data(self):
+        self._hide_current_view()
 
+        self._current_view = SquatData(
+            self._root,
+            self._press_login,
+        )
 
-window = tk.Tk()
-window.title("StrengthApp")
-
-ui = UI(window)
-ui.start()
-
-window.mainloop()
+        self._current_view.pack()

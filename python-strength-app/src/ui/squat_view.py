@@ -4,17 +4,18 @@ from tkinter import messagebox
 import datetime
 
 class SquatView:
-    def __init__(self, root, press_login):
+    def __init__(self, root, press_login, press_squat_data):
         self._root = root
         self._frame = None
         self._press_login = press_login
+        self._press_squat_data = press_squat_data
         self._initialize()
     
     def pack(self):
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
-        self._frame.destroy()  
+        self._frame.destroy()
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
@@ -47,6 +48,9 @@ class SquatView:
         write_button = tk.Button(master=self._frame, text="SAVE RESULT",command=self._write_to_file)
         write_button.pack(pady=10)
 
+        squat_data_button = tk.Button(master=self._frame, text="PAST RESULTS",command=self._press_squat_data)
+        squat_data_button.pack(pady=10)
+
         back_button = tk.Button(master=self._frame, text="BACK TO EXERCISE LIST",command=self._press_login)
         back_button.pack(pady=10)
 
@@ -65,9 +69,9 @@ class SquatView:
             if self._rep_entry.get() not in "0123456789":
                 messagebox.showerror("Cancel","Best rep has to be a positive number")
                 return
-            with open("squat.csv","a",newline='') as file:
+            with open("./ui/squat.csv","a",newline='') as file:
                 Writer=writer(file)
-                Writer.writerow([self._date_entry.get(), self._rep_entry.get(),self._weight_entry.get()])
+                Writer.writerow([self._date_entry.get(), self._rep_entry.get() + " reps",self._weight_entry.get() + " kg"])
             messagebox.showinfo("Success","Result saved!")
         else:
             messagebox.showerror("Cancel","Result not saved")
