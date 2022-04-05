@@ -6,6 +6,7 @@ authors = ["Niki Hietala <niki.hietala@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+invoke = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
 coverage = "^6.3.2"
