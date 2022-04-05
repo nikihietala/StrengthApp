@@ -1,6 +1,5 @@
 import tkinter as tk
 from csv import *
-from tkinter import messagebox
 from login_view import LoginView
 from create_new_user_view import CreateNewUserView
 from exercise_list_view import ExerciseListView
