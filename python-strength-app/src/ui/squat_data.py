@@ -1,11 +1,13 @@
 from csv import *
 import tkinter as tk
+from file_reader import squat_file_path
 
 class SquatData:
     def __init__(self, root, press_login):
         self._root = root
         self._frame = None
         self._press_login = press_login
+        self._squat_file_path=squat_file_path
         self._initialize()
 
     def pack(self):
@@ -28,7 +30,7 @@ class SquatData:
         self._read()
     
     def _read(self):
-        with open("./ui/squat.csv", "r", newline="") as data:
+        with open(self._squat_file_path, "r", newline="") as data:
             Reader=reader(data)
             data=list(Reader)
     

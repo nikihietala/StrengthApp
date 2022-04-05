@@ -2,6 +2,7 @@ import tkinter as tk
 from csv import *
 from tkinter import messagebox
 import datetime
+from file_reader import squat_file_path
 
 class SquatView:
     def __init__(self, root, press_login, press_squat_data):
@@ -9,6 +10,7 @@ class SquatView:
         self._frame = None
         self._press_login = press_login
         self._press_squat_data = press_squat_data
+        self._squat_file_path=squat_file_path
         self._initialize()
     
     def pack(self):
@@ -69,7 +71,7 @@ class SquatView:
             if self._rep_entry.get() not in "0123456789":
                 messagebox.showerror("Cancel","Best rep has to be a positive number")
                 return
-            with open("./ui/squat.csv","a",newline='') as file:
+            with open(self._squat_file_path,"a",newline='') as file:
                 Writer=writer(file)
                 Writer.writerow([self._date_entry.get(), self._rep_entry.get() + " reps",self._weight_entry.get() + " kg"])
             messagebox.showinfo("Success","Result saved!")
