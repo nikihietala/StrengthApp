@@ -10,6 +10,7 @@ from ui.shoulder_press_view import ShoulderPressView
 from ui.pull_up_view import PullUpView
 from ui.squat_data import SquatData
 
+
 class UI:
     def __init__(self, root):
         self._root = root
@@ -17,7 +18,7 @@ class UI:
 
     def start(self):
         self._show_login_view()
-        
+
     def _hide_current_view(self):
         if self._current_view:
             self._current_view.destroy()
@@ -29,28 +30,28 @@ class UI:
 
     def _press_login(self):
         self._show_exercise_list_view()
-    
+
     def _press_squat(self):
         self._show_squat_view()
-    
+
     def _press_deadlift(self):
         self._show_deadlift_view()
-    
+
     def _press_bench_press(self):
         self._show_bench_press_view()
-    
+
     def _press_shoulder_press(self):
         self._show_shoulder_press_view()
-    
+
     def _press_pull_up(self):
         self._show_pull_up_view()
-    
+
     def _press_back_to_login(self):
         self._show_login_view()
-    
+
     def _press_squat_data(self):
         self._show_squat_data()
-    
+
     def _show_login_view(self):
         self._hide_current_view()
 
@@ -71,7 +72,7 @@ class UI:
         )
 
         self._current_view.pack()
-    
+
     def _show_exercise_list_view(self):
         self._hide_current_view()
 
@@ -86,7 +87,7 @@ class UI:
         )
 
         self._current_view.pack()
-    
+
     def _show_squat_view(self):
         self._hide_current_view()
 
@@ -97,7 +98,7 @@ class UI:
         )
 
         self._current_view.pack()
-    
+
     def _show_deadlift_view(self):
         self._hide_current_view()
 
@@ -126,7 +127,7 @@ class UI:
             self._press_login
         )
 
-        self._current_view.pack()      
+        self._current_view.pack()
 
     def _show_pull_up_view(self):
         self._hide_current_view()
@@ -137,7 +138,7 @@ class UI:
         )
 
         self._current_view.pack()
-    
+
     def _show_squat_data(self):
         self._hide_current_view()
 

@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 class BenchPressView:
     def __init__(self, root, press_login):
         self._root = root
@@ -16,5 +17,6 @@ class BenchPressView:
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
 
-        back_button = tk.Button(master=self._frame, text="BACK TO EXERCISE LIST",command=self._press_login)
+        back_button = tk.Button(
+            master=self._frame, text="BACK TO EXERCISE LIST", command=self._press_login)
         back_button.pack(pady=10)
