@@ -15,7 +15,7 @@ Sovellus koostuu neljästä näkymästä:
 ![](./kuvat/kayttoliittyma_hahmotelma.jpg)
 
 Sovellus aukeaa kirjautumisvalikkoon, josta voi siirtyä joko uuden käyttäjän luomisvalikkoon tai kirjautumisen jälkeen näkyvään aloitusvalikkoon.
-Aloitusvalikosta voi siirtyä valitsemansa urheilusuorituksen suorituslistaan, jossa on listattu kaikki kyseisen urheilusuorituksen suoritukset. Suorituslistasta pääsee takaisin aloitusvalikkoon.
+Aloitusvalikosta voi siirtyä valitsemansa urheilusuorituksen suorituslistaan, jossa on listattu kaikki kyseisen urheilusuorituksen suoritukset, ja voi tallentaa uuden suorituksen. Suorituslistasta pääsee takaisin aloitusvalikkoon.
 
 
 ## Perusversion tarjoama toiminnallisuus
@@ -32,8 +32,10 @@ Aloitusvalikosta voi siirtyä valitsemansa urheilusuorituksen suorituslistaan, j
 ### Kirjautumisen jälkeen
 
 - Käyttäjä näkee aloitusvalikossa 5 urheilusuoritus-vaihtoehtoa (BENCH PRESS / SQUAT / DEADLIFT / SHOULDER PRESS / PULL UPS) eli voimailulajien pääliikkeet
-	- Käyttäjä voi valita jonkun näistä vaihtoehdoista avatakseen suorituslistan kyseisestä liikkeestä
-		- Suorituslistassa näkyy päivämäärä sekä tulos
+	- Käyttäjä voi kirjoittaa tuloksen ylös, joka tallentaa sen csv tiedostoon
+		- (päivämäärä, paras toistomäärä, paino)
+	- Käyttäjä voi avata tuloslistan, josta näkee aiemmat kirjatut tulokset
+		- Suorituslistassa näkyy päivämäärä sekä tulos(paras toistomäärä ja millä painolla)
 - Jokaisella käyttäjällä on henkilökohtaiset suoritukset, jotka vain kyseinen käyttäjä itse näkee
 - Käyttäjä voi palata suorituslistasta takaisin aloitusvalikkoon
 - Käyttäjä voi kirjauta ulos järjestelmästä aloitusvalikosta
@@ -48,6 +50,8 @@ Aloitusvalikosta voi siirtyä valitsemansa urheilusuorituksen suorituslistaan, j
 	- Esim. luoda kehityskäyrä kaikista listan suorituksesta joka visualisoi suoritukset
 	- Esim. nähdä yhteenveto kuinka usein on tehnyt suorituksia
 - Urheilusuorituksia voisi suodattaa, että esim. käyttäjä voi valita omat vaihtoehdot joita seurata ja nähdä valikossa vain vaitsemansa vaihtoehdot.
+- Sovellus tarjoaisi myös urheilukalenterin, johon voi merkitä milloin on treenannut.
+	- Voisi merkitä myös muun urheilun kun vain kuntosalitreenin
 
 	
 
