@@ -33,8 +33,12 @@ class SquatData:
         with open(self._squat_file_path, "r", newline="") as data:
             Reader = reader(data)
             data = list(Reader)
-
-            var = tk.StringVar(value=data[1:])
+            user_data = []
+            for item in data[1:]:
+                if item[1] == "5 reps":
+                    user_data.append(item)
+            #var = tk.StringVar(value=data[1:])
+            var = tk.StringVar(value=user_data)
             listbox = tk.Listbox(master=self._frame,
-                                 listvariable=var, width=30)
+                                listvariable=var, width=30)
             listbox.pack()

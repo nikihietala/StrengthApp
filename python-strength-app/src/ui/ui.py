@@ -27,7 +27,7 @@ class UI:
 
     def _press_create_new_user(self):
         self._show_create_new_user_view()
-
+    
     def _press_login(self):
         self._show_exercise_list_view()
 
@@ -58,7 +58,7 @@ class UI:
         self._current_view = LoginView(
             self._root,
             self._press_create_new_user,
-            self._press_login
+            self._press_login,
         )
 
         self._current_view.pack()
