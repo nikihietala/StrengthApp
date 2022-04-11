@@ -2,6 +2,7 @@ import tkinter as tk
 from csv import *
 from tkinter import messagebox
 import datetime
+import re
 from file_reader import squat_file_path
 
 
@@ -60,20 +61,21 @@ class SquatView:
     def _write_to_file(self):
         confirmation = messagebox.askquestion("Confirm", "You are about to enter the following data\n" + "Date: " + self._date_entry.get(
         ) + "\n" + "Best Rep: " + self._rep_entry.get() + "\n" + "Weight: " + self._weight_entry.get())
+        allowed = re.compile(r"[0-9]+")
         if confirmation == 'yes':
             try:
                 datetime.datetime.strptime(self._date_entry.get(), '%d.%m.%Y')
             except ValueError:
                 messagebox.showerror(
-                    "Cancel", "Date has to be in format day.month.year (E.g. 5.4.2022)")
+                    "Error", "Date has to be in format day.month.year (E.g. 5.4.2022)")
                 return
-            if self._weight_entry.get() not in "0123456789":
+            if not re.fullmatch(allowed, self._weight_entry.get()):
                 messagebox.showerror(
-                    "Cancel", "Weight has to be a positive number")
+                    "Error", "Weight has to be a positive number")
                 return
-            if self._rep_entry.get() not in "0123456789":
+            if not re.fullmatch(allowed, self._rep_entry.get()):
                 messagebox.showerror(
-                    "Cancel", "Best rep has to be a positive number")
+                    "Error", "Best rep has to be a positive number")
                 return
             with open(self._squat_file_path, "a", newline='') as file:
                 Writer = writer(file)
