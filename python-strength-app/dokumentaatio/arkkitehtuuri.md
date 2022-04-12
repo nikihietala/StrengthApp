@@ -2,6 +2,7 @@
 
 ## Rakenne
 
+Koodin pakkaus-/luokkakaavio on:
 ```mermaid
 	classDiagram
 		ui ..> services
@@ -20,11 +21,17 @@
 				User
 				
 		}
-		
 ```
 
+ ## Sovelluslogiikka
+ 
+ Luokka User
 ```mermaid
 		classDiagram
 			UserService "0..1" -- "0..1" User
 			UserRepository ..> User
-```
+			class User{
+				username
+				password
+			}
+```		
