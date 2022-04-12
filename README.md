@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka, harjoitustyö (StrengthApp)
 
-Sovelluksen avulla käyttäjät pystyvät seuraamaan voimailulajien suorituksiaan.
+Sovelluksen avulla käyttäjät pystyvät kirjaamaan ja seuraamaan voimailulajien suorituksiaan.
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](/python-strength-app/dokumentaatio/vaatimusmaarittely.md)
