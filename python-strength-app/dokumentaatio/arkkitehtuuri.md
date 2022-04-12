@@ -19,8 +19,10 @@
 			UserRepository
 		}
 		class entities{
-			User
+			class User{
 				username
 				password
+				}
 		}
+		
 ```
