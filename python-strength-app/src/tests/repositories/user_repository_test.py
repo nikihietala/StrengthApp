@@ -27,3 +27,8 @@ class TestUserRepository(unittest.TestCase):
         self.assertEqual(len(users), 2)
         self.assertEqual(users[0].username, self.user_mies.username)
         self.assertEqual(users[1].username, self.user_nainen.username)
+    
+    def test_clear_userlist(self):
+        user_repository.clear_userlist()
+        users = user_repository.find_all()
+        self.assertEqual(len(users), 0)
