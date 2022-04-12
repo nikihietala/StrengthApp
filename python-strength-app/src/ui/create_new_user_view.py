@@ -31,6 +31,7 @@ class CreateNewUserView:
             messagebox.showinfo("Success", f"Username {username} is created!")
         except UsernameExistsError:
             messagebox.showerror("Error", f"Username {username} is taken!")
+            raise UsernameExistsError("Username already exists")
 
 
     def _initialize(self):
