@@ -12,33 +12,33 @@ Sovelluksella on vain yksi käyttäjärooli: _normaali käyttäjä_.
 ## Käyttöliittymäluonnos
 
 Sovellus koostuu neljästä näkymästä: 
-![](./kuvat/kayttoliittyma_hahmotelma.jpg)
+![](./kuvat/kayttoliittyma_hahmotelma_2.jpg)
 
-Sovellus aukeaa kirjautumisvalikkoon, josta voi siirtyä joko uuden käyttäjän luomisvalikkoon tai kirjautumisen jälkeen näkyvään aloitusvalikkoon.
-Aloitusvalikosta voi siirtyä valitsemansa urheilusuorituksen suorituslistaan, jossa on listattu kaikki kyseisen urheilusuorituksen suoritukset, ja voi tallentaa uuden suorituksen. Suorituslistasta pääsee takaisin aloitusvalikkoon.
+Sovellus aukeaa kirjautumisvalikkoon, josta voi siirtyä joko uuden käyttäjän luomisvalikkoon tai kirjautumisen jälkeen näkyvään aloitusvalikkoon jossa on listattu 5 voimailuliikettä.
+Aloitusvalikosta voi siirtyä valitsemansa liikeeseen, jossa voi tallentaa uuden suorituksen tai siirtyä tulosvalikkoon katsomaan aikaisempia kirjattuja suorituksia. Voimailuliikkeen valikosta sekä tuloslistasta pääsee takaisin aloitusvalikkoon.
 
 
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
 
-- Käyttäjä voi luoda käyttäjätunnuksen ja salasanan
-	- Käyttäjätunnus tulee olla uniikki, sekä vähintään 4 merkkiä pitkä
-	- Salasana tulee olla vähintään 6 merkkiä pitkä
+- Käyttäjä voi luoda käyttäjätunnuksen ja salasana [TEHTY]
+	- Käyttäjätunnus tulee olla uniikki, sekä vähintään 4 merkkiä pitkä [TEHTY]
+	- Salasana tulee olla vähintään 6 merkkiä pitkä [TEHTY]
 - Käyttäjä voi kirjautua järjestelmään
 	- Kirjautuminen onnistuu jos käyttäjätunnus sekä salasana ovat oikeat
 	- Jos käyttäjätunnus ei ole olemassa, tai salasana on väärä, kirjautuminen ei onnistu
 
 ### Kirjautumisen jälkeen
 
-- Käyttäjä näkee aloitusvalikossa 5 urheilusuoritus-vaihtoehtoa (BENCH PRESS / SQUAT / DEADLIFT / SHOULDER PRESS / PULL UPS) eli voimailulajien pääliikkeet
-	- Käyttäjä voi kirjoittaa tuloksen ylös, joka tallentaa sen csv tiedostoon
-		- (päivämäärä, paras toistomäärä, paino)
-	- Käyttäjä voi avata tuloslistan, josta näkee aiemmat kirjatut tulokset
-		- Suorituslistassa näkyy päivämäärä sekä tulos(paras toistomäärä ja millä painolla)
+- Käyttäjä näkee aloitusvalikossa 5 urheilusuoritus-vaihtoehtoa (BENCH PRESS / SQUAT / DEADLIFT / SHOULDER PRESS / PULL UPS) eli voimailulajien pääliikkeet [TEHTY 1/5]
+	- Käyttäjä voi kirjoittaa tuloksen ylös, joka tallentaa sen csv tiedostoon [TEHTY 1/5]
+		- (päivämäärä, paras toistomäärä, paino) [TEHTY]
+	- Käyttäjä voi avata tuloslistan, josta näkee aiemmat kirjatut tulokset [TEHTY 1/5]
+		- Suorituslistassa näkyy päivämäärä sekä tulos(paras toistomäärä ja millä painolla) [TEHTY]
 - Jokaisella käyttäjällä on henkilökohtaiset suoritukset, jotka vain kyseinen käyttäjä itse näkee
-- Käyttäjä voi palata suorituslistasta takaisin aloitusvalikkoon
-- Käyttäjä voi kirjauta ulos järjestelmästä aloitusvalikosta
+- Käyttäjä voi palata suorituslistasta takaisin aloitusvalikkoon [TEHTY]
+- Käyttäjä voi kirjauta ulos järjestelmästä aloitusvalikosta 
 
 ## Jatkokehitysideoita
 
