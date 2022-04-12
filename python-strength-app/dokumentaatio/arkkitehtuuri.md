@@ -8,8 +8,6 @@
 		services ..> repositories
 		services ..> entities
 		repositories ..> entities
-		UserService "0..1" -- "0..1" User
-		UserRepository ..> User
 		class ui{
 		}
 		class services{
@@ -19,10 +17,14 @@
 			UserRepository
 		}
 		class entities{
-			class User{
-				username
-				password
-				}
+				User
+				
 		}
 		
+```
+
+```mermaid
+		classDiagram
+			UserService "0..1" -- "0..1" User
+			UserRepository ..> User
 ```
