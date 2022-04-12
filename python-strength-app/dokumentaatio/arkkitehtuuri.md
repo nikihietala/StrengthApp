@@ -20,9 +20,7 @@
 		}
 		class entities{
 			User
-		}
-		class User{
-			username
-			password
+				username
+				password
 		}
 ```
