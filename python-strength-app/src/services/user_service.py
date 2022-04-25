@@ -25,6 +25,7 @@ class UserService:
 
         return user
     
+    
     def login(self, username, password):
         user = self._user_repository.find_by_username(username)
 
@@ -33,6 +34,9 @@ class UserService:
 
         self._user = user
         return user
+    
+    def get_user(self):
+        return self._user
     
     def get_users(self):
         return self._user_repository.find_all()

@@ -1,10 +1,12 @@
 import tkinter as tk
+from services.user_service import user_service
 
 
 class ExerciseListView:
     def __init__(self, root, press_back_to_login, press_squat, press_deadlift, press_bench_press, press_shoulder_press, press_pull_up):
         self._root = root
         self._frame = None
+        self._user = user_service.get_user()
         self._press_back_to_login = press_back_to_login
         self._press_squat = press_squat
         self._press_deadlift = press_deadlift
@@ -21,6 +23,11 @@ class ExerciseListView:
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
+
+        user_label = tk.Label(
+            master=self._frame, text=f"Logged as: {self._user.username}"
+        )
+        user_label.pack()
 
         back_button = tk.Button(
             master=self._frame, text="BACK TO LOGIN", command=self._press_back_to_login)
