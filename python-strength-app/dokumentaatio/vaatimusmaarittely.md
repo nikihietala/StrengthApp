@@ -25,9 +25,9 @@ Aloitusvalikosta voi siirtyä valitsemansa liikeeseen, jossa voi tallentaa uuden
 - Käyttäjä voi luoda käyttäjätunnuksen ja salasana [TEHTY]
 	- Käyttäjätunnus tulee olla uniikki, sekä vähintään 4 merkkiä pitkä [TEHTY]
 	- Salasana tulee olla vähintään 6 merkkiä pitkä [TEHTY]
-- Käyttäjä voi kirjautua järjestelmään
-	- Kirjautuminen onnistuu jos käyttäjätunnus sekä salasana ovat oikeat
-	- Jos käyttäjätunnus ei ole olemassa, tai salasana on väärä, kirjautuminen ei onnistu
+- Käyttäjä voi kirjautua järjestelmään [TEHTY]
+	- Kirjautuminen onnistuu jos käyttäjätunnus sekä salasana ovat oikeat [TEHTY]
+	- Jos käyttäjätunnus ei ole olemassa, tai salasana on väärä, kirjautuminen ei onnistu [TEHTY]
 
 ### Kirjautumisen jälkeen
 
@@ -36,9 +36,9 @@ Aloitusvalikosta voi siirtyä valitsemansa liikeeseen, jossa voi tallentaa uuden
 		- (päivämäärä, paras toistomäärä, paino) [TEHTY]
 	- Käyttäjä voi avata tuloslistan, josta näkee aiemmat kirjatut tulokset [TEHTY 1/5]
 		- Suorituslistassa näkyy päivämäärä sekä tulos(paras toistomäärä ja millä painolla) [TEHTY]
-- Jokaisella käyttäjällä on henkilökohtaiset suoritukset, jotka vain kyseinen käyttäjä itse näkee
+- Jokaisella käyttäjällä on henkilökohtaiset suoritukset, jotka vain kyseinen käyttäjä itse näkee [TEHTY]
 - Käyttäjä voi palata suorituslistasta takaisin aloitusvalikkoon [TEHTY]
-- Käyttäjä voi kirjauta ulos järjestelmästä aloitusvalikosta 
+- Käyttäjä voi kirjauta ulos järjestelmästä aloitusvalikosta [TEHTY]
 
 ## Jatkokehitysideoita
 
