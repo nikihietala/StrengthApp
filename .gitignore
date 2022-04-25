@@ -2,6 +2,3 @@
 __pycache__
 .coverage
 htmlcov
-
-#ignore changes to data files
-python-strength-app/data/*
