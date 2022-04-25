@@ -1,5 +1,6 @@
 import tkinter as tk
-
+from services.user_service import user_service, LoginError
+from tkinter import messagebox
 
 class LoginView:
     def __init__(self, root, press_create_new_user, press_login):
@@ -15,6 +16,18 @@ class LoginView:
     def destroy(self):
         self._frame.destroy()
 
+    def _check_login(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+
+        try:
+            user_service.login(username, password)
+            self._press_login()
+        except LoginError:
+            messagebox.showerror("Error", f"Wrong username or password")
+            raise LoginError("Wrong username or password, try again.")      
+
+
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
         intro_text = tk.Label(master=self._frame,
@@ -24,17 +37,17 @@ class LoginView:
         username_label = tk.Label(master=self._frame, text="Username")
         username_label.pack()
 
-        username_entry = tk.Entry(master=self._frame)
-        username_entry.pack(fill=tk.X)
+        self.username_entry = tk.Entry(master=self._frame)
+        self.username_entry.pack(fill=tk.X)
 
         password_label = tk.Label(master=self._frame, text="Password")
         password_label.pack()
 
-        password_entry = tk.Entry(master=self._frame, show="*")
-        password_entry.pack(fill=tk.X)
+        self.password_entry = tk.Entry(master=self._frame, show="*")
+        self.password_entry.pack(fill=tk.X)
 
         login_button = tk.Button(
-            master=self._frame, text="LOGIN", command=self._press_login)
+            master=self._frame, text="LOGIN", command=self._check_login)
         login_button.pack(pady=10)
 
         no_user_label = tk.Label(
