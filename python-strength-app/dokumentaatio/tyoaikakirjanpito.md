@@ -8,5 +8,6 @@
 | *5.4* |3        | käyttäjä katsoa sovelluksella csv tiedoston sisältöä, changelog, invoke alustus  |
 | *11.4*|4        | käyttäjä voi rekisteröityä, käyttäjätiedot tallennetaan tietokantaan  |
 | *12.4*|4        | testaus, rakenteen refaktorointi  |
-| *12.4*|1        | alustava arkkitehtruurikuvaus, määrittelydokumentti |
-| *yht* |22       | 
+| *12.4*|1        | alustava arkkitehtuurikuvaus, määrittelydokumentti |
+| *25.4*|4        | käyttäjä voi kirjautua, käyttäjä näkee vain omat tulokset, jatkoa arkkitehtuurikuvaukseen |
+| *yht* |26       | 
