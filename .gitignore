@@ -4,10 +4,10 @@ __pycache__
 htmlcov
 
 #ignore changes to data files
-data/database.sqlite
-data/test-database.sqlite
-data/squat.csv
-data/benchpress.csv
-data/deadlift.csv
-data/shoulderpress.csv
-data/pullup.csv
+python-strength-app/data/database.sqlite
+python-strength-app/data/test-database.sqlite
+python-strength-app/data/squat.csv
+python-strength-app/data/benchpress.csv
+python-strength-app/data/deadlift.csv
+python-strength-app/data/shoulderpress.csv
+python-strength-app/data/pullup.csv
