@@ -10,3 +10,7 @@
 - Käyttäjä voi luoda käyttäjätunnuksen
 	- käyttäjätunnus & salasana tallentuu SQLite-tietokantaan
 - UserRepository-luokka testattu
+
+### Viikko 5
+- Käyttäjä voi kirjautua
+- Käyttäjä näkee vain omat tuloksensa
