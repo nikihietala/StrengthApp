@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from services.user_service import UserService, UsernameExistsError
+from services.user_service import UsernameExistsError, user_service
 
 
 class CreateNewUserView:
@@ -27,7 +27,7 @@ class CreateNewUserView:
             return
         
         try:
-            UserService().create_user(username, password)
+            user_service.create_user(username, password)
             messagebox.showinfo("Success", f"Username {username} is created!")
         except UsernameExistsError:
             messagebox.showerror("Error", f"Username {username} is taken!")
