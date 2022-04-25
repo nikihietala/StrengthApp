@@ -4,12 +4,14 @@ from tkinter import messagebox
 import datetime
 import re
 from file_reader import squat_file_path
+from services.user_service import user_service
 
 
 class SquatView:
     def __init__(self, root, press_login, press_squat_data):
         self._root = root
         self._frame = None
+        self._user = user_service.get_user()
         self._press_login = press_login
         self._press_squat_data = press_squat_data
         self._squat_file_path = squat_file_path
@@ -71,16 +73,16 @@ class SquatView:
                 return
             if not re.fullmatch(allowed, self._weight_entry.get()):
                 messagebox.showerror(
-                    "Error", "Weight has to be a positive number")
+                    "Error", "Weight has to be a positive number (E.g. 80)")
                 return
             if not re.fullmatch(allowed, self._rep_entry.get()):
                 messagebox.showerror(
-                    "Error", "Best rep has to be a positive number")
+                    "Error", "Best rep has to be a positive number (E.g. 5)")
                 return
             with open(self._squat_file_path, "a", newline='') as file:
                 Writer = writer(file)
                 Writer.writerow([self._date_entry.get(), self._rep_entry.get(
-                ) + " reps", self._weight_entry.get() + " kg"])
+                ) + " reps", self._weight_entry.get() + " kg", self._user.username])
             messagebox.showinfo("Success", "Result saved!")
         else:
             messagebox.showerror("Cancel", "Result not saved")

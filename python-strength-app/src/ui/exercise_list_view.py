@@ -25,7 +25,7 @@ class ExerciseListView:
         self._frame = tk.Frame(master=self._root)
 
         user_label = tk.Label(
-            master=self._frame, text=f"Logged as: {self._user.username}"
+            master=self._frame, text=f"Logged as:   {self._user.username}"
         )
         user_label.pack()
 

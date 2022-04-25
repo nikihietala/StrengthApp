@@ -1,12 +1,14 @@
 from csv import *
 import tkinter as tk
 from file_reader import squat_file_path
+from services.user_service import user_service
 
 
 class SquatData:
     def __init__(self, root, press_login):
         self._root = root
         self._frame = None
+        self._user = user_service.get_user()
         self._press_login = press_login
         self._squat_file_path = squat_file_path
         self._initialize()
@@ -35,9 +37,8 @@ class SquatData:
             data = list(Reader)
             user_data = []
             for item in data[1:]:
-                if item[1] == "5 reps":
-                    user_data.append(item)
-            #var = tk.StringVar(value=data[1:])
+                if item[3] == f"{self._user.username}":
+                    user_data.append(item[0:3])
             var = tk.StringVar(value=user_data)
             listbox = tk.Listbox(master=self._frame,
                                 listvariable=var, width=30)
