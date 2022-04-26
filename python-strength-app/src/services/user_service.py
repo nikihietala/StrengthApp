@@ -7,6 +7,9 @@ class UsernameExistsError(Exception):
 class LoginError(Exception):
     pass
 
+class LengthError(Exception):
+    pass
+
 class UserService:
     def __init__(self, user_repository=user_rep):
         self._user = None
@@ -15,6 +18,8 @@ class UserService:
 
     def create_user(self, username, password, login=True):
         user_exists = self._user_repository.find_by_username(username)
+        if len(username) < 4 or len(password) < 6:
+            raise LengthError(f'Username or password too short')
         if user_exists:
             raise UsernameExistsError(f'Username {username} already exists!')
 

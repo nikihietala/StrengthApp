@@ -1,6 +1,6 @@
 import unittest
 from entities.user import User
-from services.user_service import (UserService, LoginError, UsernameExistsError)
+from services.user_service import (UserService, LoginError, UsernameExistsError, LengthError)
 from repositories.user_repository import user_repository
 
 class TestUserService(unittest.TestCase):
@@ -36,5 +36,19 @@ class TestUserService(unittest.TestCase):
         users = self.user_service.get_users()
         self.assertRaises(UsernameExistsError, lambda: self.user_service.create_user('new_user','password123'))
         self.assertEqual(len(users), 1)
+
+    def test_create_user_with_too_short_username(self):
+        user_repository.clear_userlist()
+        users = self.user_service.get_users()
+        self.assertRaises(LengthError, lambda: self.user_service.create_user('a','password123'))
+        self.assertEqual(len(users), 0)
+    
+    def test_create_user_with_too_short_password(self):
+        user_repository.clear_userlist()
+        users = self.user_service.get_users()
+        self.assertRaises(LengthError, lambda: self.user_service.create_user('valid_user','123'))
+        self.assertEqual(len(users), 0)
+    
+
     
 

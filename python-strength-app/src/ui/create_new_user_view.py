@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from services.user_service import UsernameExistsError, user_service
+from services.user_service import UsernameExistsError, user_service, LengthError
 
 
 class CreateNewUserView:
@@ -21,10 +21,6 @@ class CreateNewUserView:
     def _create_new_user(self):
         username = self.username_entry.get()
         password = self.password_entry.get()
-
-        if len(username) < 4 or len(password) < 6:
-            messagebox.showerror("Error", "Username or password too short!")
-            return
         
         try:
             user_service.create_user(username, password)
@@ -32,6 +28,9 @@ class CreateNewUserView:
         except UsernameExistsError:
             messagebox.showerror("Error", f"Username {username} is taken!")
             raise UsernameExistsError("Username already exists")
+        except LengthError:
+            messagebox.showerror("Error", "Username or password too short!")
+            raise LengthError(f'Username or password too short')
 
 
     def _initialize(self):
