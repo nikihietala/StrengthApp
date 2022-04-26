@@ -10,4 +10,5 @@
 | *12.4*|4        | testaus, rakenteen refaktorointi  |
 | *12.4*|1        | alustava arkkitehtuurikuvaus, määrittelydokumentti |
 | *25.4*|4        | käyttäjä voi kirjautua, käyttäjä näkee vain omat tulokset, jatkoa arkkitehtuurikuvaukseen |
-| *yht* |26       | 
+| *26.4*|2        | testausta, refaktorointia |
+| *yht* |28       | 
