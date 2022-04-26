@@ -14,3 +14,4 @@
 ### Viikko 5
 - Käyttäjä voi kirjautua
 - Käyttäjä näkee vain omat tuloksensa
+- UserService-luokka testattu
