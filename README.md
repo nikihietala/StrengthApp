@@ -10,6 +10,8 @@ Sovelluksen avulla käyttäjät pystyvät kirjaamaan ja seuraamaan voimailulajie
 
 ## Asennus
 
+Tiedosto: Python-strength-app
+
 1. Asenna riippuvuudet komennolla:
 
 ```bash
