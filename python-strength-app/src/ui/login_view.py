@@ -2,6 +2,7 @@ import tkinter as tk
 from services.user_service import user_service, LoginError
 from tkinter import messagebox
 
+
 class LoginView:
     def __init__(self, root, press_create_new_user, press_login):
         self._root = root
@@ -25,8 +26,7 @@ class LoginView:
             self._press_login()
         except LoginError:
             messagebox.showerror("Error", f"Wrong username or password")
-            raise LoginError("Wrong username or password, try again.")      
-
+            raise LoginError("Wrong username or password, try again.")
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)

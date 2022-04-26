@@ -41,5 +41,5 @@ class SquatData:
                     user_data.append(item[0:3])
             var = tk.StringVar(value=user_data)
             listbox = tk.Listbox(master=self._frame,
-                                listvariable=var, width=30)
+                                 listvariable=var, width=30)
             listbox.pack()

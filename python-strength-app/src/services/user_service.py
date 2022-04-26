@@ -1,25 +1,28 @@
 from entities.user import User
 from repositories.user_repository import (user_repository as user_rep)
 
+
 class UsernameExistsError(Exception):
     pass
+
 
 class LoginError(Exception):
     pass
 
+
 class LengthError(Exception):
     pass
+
 
 class UserService:
     def __init__(self, user_repository=user_rep):
         self._user = None
         self._user_repository = user_repository
 
-
     def create_user(self, username, password, login=True):
         user_exists = self._user_repository.find_by_username(username)
         if len(username) < 4 or len(password) < 6:
-            raise LengthError(f'Username or password too short')
+            raise LengthError('Username or password too short')
         if user_exists:
             raise UsernameExistsError(f'Username {username} already exists!')
 
@@ -29,8 +32,7 @@ class UserService:
             self._user = user
 
         return user
-    
-    
+
     def login(self, username, password):
         user = self._user_repository.find_by_username(username)
 
@@ -39,17 +41,15 @@ class UserService:
 
         self._user = user
         return user
-    
+
     def get_user(self):
         return self._user
-    
+
     def get_users(self):
         return self._user_repository.find_all()
 
     def logout(self):
         self._user = None
 
+
 user_service = UserService()
-
-        
-

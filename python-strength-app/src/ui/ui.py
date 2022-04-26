@@ -11,7 +11,7 @@ from ui.pull_up_view import PullUpView
 from ui.squat_data import SquatData
 
 
-class UI:
+class UserInterface:
     def __init__(self, root):
         self._root = root
         self._current_view = None
@@ -27,7 +27,7 @@ class UI:
 
     def _press_create_new_user(self):
         self._show_create_new_user_view()
-    
+
     def _press_login(self):
         self._show_exercise_list_view()
 

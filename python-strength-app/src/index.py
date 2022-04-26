@@ -1,13 +1,13 @@
 import tkinter as tk
-from ui.ui import UI
+from ui.ui import UserInterface
 
 
 def main():
     window = tk.Tk()
     window.title("StrengthApp")
 
-    ui = UI(window)
-    ui.start()
+    user_interface = UserInterface(window)
+    user_interface.start()
 
     window.mainloop()
 

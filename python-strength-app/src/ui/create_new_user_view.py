@@ -21,7 +21,7 @@ class CreateNewUserView:
     def _create_new_user(self):
         username = self.username_entry.get()
         password = self.password_entry.get()
-        
+
         try:
             user_service.create_user(username, password)
             messagebox.showinfo("Success", f"Username {username} is created!")
@@ -31,7 +31,6 @@ class CreateNewUserView:
         except LengthError:
             messagebox.showerror("Error", "Username or password too short!")
             raise LengthError(f'Username or password too short')
-
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
