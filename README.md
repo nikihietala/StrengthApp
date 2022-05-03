@@ -3,10 +3,11 @@
 Sovelluksen avulla käyttäjät pystyvät kirjaamaan ja seuraamaan voimailulajien suorituksiaan.
 
 ## Dokumentaatio
+- [Käyttöohje](/python-strength-app/dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](/python-strength-app/dokumentaatio/vaatimusmaarittely.md)
+- [Arkkitehtuurikuvaus](/python-strength-app/dokumentaatio/arkkitehtuuri.md)
 - [Työaikakirjanpito](/python-strength-app/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](/python-strength-app/dokumentaatio/changelog.md)
-- [Arkkitehtuurikuvaus](/python-strength-app/dokumentaatio/arkkitehtuuri.md)
 
 ## Asennus
 
