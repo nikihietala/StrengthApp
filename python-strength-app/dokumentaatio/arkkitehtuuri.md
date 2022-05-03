@@ -22,10 +22,34 @@ Koodin pakkaus-/luokkakaavio on:
 				
 		}
 ```
+_ui_ sisältää käyttöliittymän koodin. 
+_services_ sisältää sovelluslogiikan koodin.
+_repositories_ sisältää tietojen tallennukseen vastaavan koodin.
+_entities_ sisältää käyttäjän luokan.
 
- ## Sovelluslogiikka
+## Käyttöliittymä
+
+Käyttöliittymä sisältää seuraavat näkymät:
+
+- Kirjautuminen
+- Uuden käyttäjän luominen
+- Harjoitus-lista
+- Valitun harjoituksen sivu (jokaiselle oma sivu)
+	- Squat (Kyykky)
+	- Deadlift (Maastaveto)
+	- Bench Press (Penkkipunnerrus)
+	- Shoulder Press (Pystypunnerrus)
+	- Pull Up (Leuanveto)
+- Valitun harjoituksen tuloslista (jokaiselle oma sivu)
+	- Squat (Kyykky)
+	- Deadlift (Maastaveto)
+	- Bench Press (Penkkipunnerrus)
+	- Shoulder Press (Pystypunnerrus)
+	- Pull Up (Leuanveto)
+
+## Sovelluslogiikka
  
- Luokka User
+ Luokka User kuvaa käyttäjiä.
 ```mermaid
 		classDiagram
 			UserService "0..1" -- "0..1" User
@@ -35,6 +59,27 @@ Koodin pakkaus-/luokkakaavio on:
 				password
 			}
 ```	
+
+## Tietojen pysyväistallennus
+
+Pakkauksen repositories `UserRepository` luokka vastaa käyttäjän tietojen tallennuksesta SQLite-tietokantaan.
+
+### Tiedostot
+
+Käyttäjien tiedot tallennetaan Data hakemistossa sijaitsevaan [SQL-tietokantatiedostoon](/python-strength-app/data/database.sqlite) . 
+Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`. Taulu alustetaan [initilaize_database.py](https://https://github.com/nikihietala/ot-harjoitustyo/blob/master/python-strength-app/src/initialize_database.py) -tiedostossa.
+
+Sovellus tallentaa voimailuliikkeiden kirjatut tulokset CSV-tiedostoon formaatissa:
+
+```
+29.4.2022,5 reps,30 kg,matti
+30.4.2022,5 reps,100 kg,esimerkkieero
+```
+
+Päivämäärä, toistomäärä, paino, käyttäjätunnus. Kenttien arvot erotellaan pilkulla (,).
+CSV-tiedoston ensimmäinen rivi on `Date,Best Rep,Weight,Name`, ja tulokset tallennetaan riviltä 2 lähtien.
+
+
 
 ## Toiminnallisuudet
 
@@ -91,7 +136,7 @@ uuden tuloksen. Seuraava sekvenssikaavio näyttää kuinka uuden tuloksen kirjaa
 			User->>UI: click "SAVE RESULT"
 ```
 
---kesken		
+	
 			
 			
 			

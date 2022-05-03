@@ -15,3 +15,6 @@
 - Käyttäjä voi kirjautua
 - Käyttäjä näkee vain omat tuloksensa
 - UserService-luokka testattu
+
+### Viikko 6
+- Käyttäjä voi kirjata ja katsoa kaikkia voimailuliikkeitä
