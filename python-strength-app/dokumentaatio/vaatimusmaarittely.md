@@ -50,8 +50,11 @@ Aloitusvalikosta voi siirtyä valitsemansa liikeeseen, jossa voi tallentaa uuden
 	- Esim. luoda kehityskäyrä kaikista listan suorituksesta joka visualisoi suoritukset
 	- Esim. nähdä yhteenveto kuinka usein on tehnyt suorituksia
 - Urheilusuorituksia voisi suodattaa, että esim. käyttäjä voi valita omat vaihtoehdot joita seurata ja nähdä valikossa vain vaitsemansa vaihtoehdot.
-- Sovellus tarjoaisi myös urheilukalenterin, johon voi merkitä milloin on treenannut.
-	- Voisi merkitä myös muun urheilun kun vain kuntosalitreenin
+- Sovellus tarjoaisi myös kalenterin [TEHTY]
+	- Kalenterissa näkyisi päivät jolloin on treenannut
+- Sovellukseen voisi lisätä myös muita urheilusuorituksia
+	- Nämä urheilusuoritukset näkyisi myös kalentereissa
+	 - Esim. kuntosalitreenit omalla värillä, jokin muu urheilusuoritus (esim. jalkapallo) omalla värillä
 
 	
 

@@ -46,6 +46,7 @@ Käyttöliittymä sisältää seuraavat näkymät:
 	- Bench Press (Penkkipunnerrus)
 	- Shoulder Press (Pystypunnerrus)
 	- Pull Up (Leuanveto)
+- Kalenteri
 
 ## Sovelluslogiikka
  

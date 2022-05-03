@@ -18,3 +18,4 @@
 
 ### Viikko 6
 - Käyttäjä voi kirjata ja katsoa kaikkia voimailuliikkeitä
+- Käyttäjä voi avata kalenterin
