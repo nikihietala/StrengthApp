@@ -3,6 +3,7 @@ from csv import *
 from ui.login_view import LoginView
 from ui.create_new_user_view import CreateNewUserView
 from ui.exercise_list_view import ExerciseListView
+from ui.calendar_view import CalendarView
 from ui.squat_view import SquatView
 from ui.squat_data import SquatData
 from ui.deadlift_view import DeadliftView
@@ -36,6 +37,9 @@ class UserInterface:
 
     def _press_login(self):
         self._show_exercise_list_view()
+    
+    def _press_calendar(self):
+        self._show_calendar_view()
 
     def _press_squat(self):
         self._show_squat_view()
@@ -101,7 +105,18 @@ class UserInterface:
             self._press_deadlift,
             self._press_bench_press,
             self._press_shoulder_press,
-            self._press_pull_up
+            self._press_pull_up,
+            self._press_calendar,
+        )
+
+        self._current_view.pack()
+    
+    def _show_calendar_view(self):
+        self._hide_current_view()
+
+        self._current_view = CalendarView(
+            self._root,
+            self._press_login
         )
 
         self._current_view.pack()

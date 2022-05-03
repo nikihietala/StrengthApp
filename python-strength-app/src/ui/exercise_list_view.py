@@ -3,7 +3,7 @@ from services.user_service import user_service
 import datetime
 
 class ExerciseListView:
-    def __init__(self, root, press_back_to_login, press_squat, press_deadlift, press_bench_press, press_shoulder_press, press_pull_up):
+    def __init__(self, root, press_back_to_login, press_squat, press_deadlift, press_bench_press, press_shoulder_press, press_pull_up, press_calendar):
         self._root = root
         self._frame = None
         self._user = user_service.get_user()
@@ -13,6 +13,7 @@ class ExerciseListView:
         self._press_bench_press = press_bench_press
         self._press_shoulder_press = press_shoulder_press
         self._press_pull_up = press_pull_up
+        self._press_calendar = press_calendar
         self._initialize()
 
     def pack(self):
@@ -63,3 +64,11 @@ class ExerciseListView:
         pull_up_button = tk.Button(
             master=self._frame, text="PULL UP", command=self._press_pull_up)
         pull_up_button.pack(pady=2, side=tk.TOP, anchor=tk.NW)
+
+        calendar_text = tk.Label(
+            master=self._frame, text="Calendar", font=("Arial", 10, "bold"))
+        calendar_text.pack(side=tk.TOP, anchor=tk.N, pady=15)
+
+        calendar_button = tk.Button(
+            master=self._frame, text="Open calendar", command=self._press_calendar)
+        calendar_button.pack(pady=2, side=tk.TOP, anchor=tk.N)
