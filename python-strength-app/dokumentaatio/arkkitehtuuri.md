@@ -67,7 +67,7 @@ Pakkauksen repositories `UserRepository` luokka vastaa käyttäjän tietojen tal
 ### Tiedostot
 
 Käyttäjien tiedot tallennetaan Data hakemistossa sijaitsevaan [SQL-tietokantatiedostoon](/python-strength-app/data/database.sqlite) . 
-Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`. Taulu alustetaan [initialize_database.py](https://https://github.com/nikihietala/ot-harjoitustyo/blob/master/python-strength-app/src/initialize_database.py) -tiedostossa.
+Käyttäjät tallennetaan SQLite-tietokannan tauluun `users`. Taulu alustetaan [initialize_database.py](https://github.com/nikihietala/ot-harjoitustyo/blob/master/python-strength-app/src/initialize_database.py) -tiedostossa.
 
 Sovellus tallentaa voimailuliikkeiden kirjatut tulokset CSV-tiedostoon formaatissa:
 
