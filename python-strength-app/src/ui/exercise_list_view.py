@@ -1,6 +1,6 @@
 import tkinter as tk
 from services.user_service import user_service
-
+import datetime
 
 class ExerciseListView:
     def __init__(self, root, press_back_to_login, press_squat, press_deadlift, press_bench_press, press_shoulder_press, press_pull_up):
@@ -25,9 +25,16 @@ class ExerciseListView:
         self._frame = tk.Frame(master=self._root)
 
         user_label = tk.Label(
-            master=self._frame, text=f"Logged as:   {self._user.username}"
+            master=self._frame, text=f"Logged in as:   {self._user.username}"
         )
         user_label.pack()
+        
+        today_date = datetime.datetime.now().date()
+        today_date_reformat = today_date.strftime("%d.%m.%Y")
+        date_label = tk.Label(
+            master=self._frame, text = f"Date today:    {today_date_reformat}"
+        )
+        date_label.pack()
 
         back_button = tk.Button(
             master=self._frame, text="BACK TO LOGIN", command=self._press_back_to_login)
