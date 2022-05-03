@@ -11,4 +11,6 @@
 | *12.4*|1        | alustava arkkitehtuurikuvaus, määrittelydokumentti |
 | *25.4*|4        | käyttäjä voi kirjautua, käyttäjä näkee vain omat tulokset, jatkoa arkkitehtuurikuvaukseen |
 | *26.4*|2        | testausta, refaktorointia |
-| *yht* |28       | 
+| *2.5* |1        | ui muutoksia, kaikki näkymät toimii (squat/deadlift/benchpress/shoulderpress/pullup) |
+| *3.5* |4        | käyttäjä pääsee kalenterinäkymään, docstring aloitettu, arkkitehtuurikuvausta jatkettu |
+| *yht* |33       | 
