@@ -26,7 +26,8 @@ class ShoulderPressData:
             master=self._frame, text="BACK TO EXERCISE LIST", command=self._press_login)
         back_button.pack(pady=10)
 
-        shoulder_press_text = tk.Label(master=self._frame, text="Shoulder Press results")
+        shoulder_press_text = tk.Label(
+            master=self._frame, text="Shoulder Press results")
         shoulder_press_text.pack(side=tk.TOP, anchor=tk.NW)
 
         self._read()

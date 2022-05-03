@@ -2,8 +2,31 @@ import tkinter as tk
 from services.user_service import user_service
 import datetime
 
+
 class ExerciseListView:
+    """Harjoitusten valikosta vastaava näkymä."""
+
     def __init__(self, root, press_back_to_login, press_squat, press_deadlift, press_bench_press, press_shoulder_press, press_pull_up, press_calendar):
+        """Luokan konstruktori, joka luo harjoituslista-näkymän.
+
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_back_to_login:
+                Kutsuttava arvo, jolla siirrytään takaisin kirjautumisnäkymään.
+            press_squat:
+                Kutsuttava arvo, jolla siirrytään squat(kyykky)-näkymään.
+            press_deadlift:
+                Kutsuttava arvo, jolla siirrytään deadlift(maastaveto)-näkymään.
+            press_bench_press:
+                Kutsuttava arvo, jolla siirrytään bench_press(penkkipunnerrus)-näkymään.
+            press_shoulder_press:
+                Kutsuttava arvo, jolla siirrytään shoulder_press(pystypunnerrus)-näkymään.
+            press_pull_up:
+                Kutsuttava arvo, jolla siirrytään pull_up(leuanveto)-näkymään.
+            press_calendar:
+                Kutsuttava arvo, jolla siirrytään kalenteri-näkymään.
+        """
         self._root = root
         self._frame = None
         self._user = user_service.get_user()
@@ -17,9 +40,11 @@ class ExerciseListView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _initialize(self):
@@ -29,11 +54,11 @@ class ExerciseListView:
             master=self._frame, text=f"Logged in as:   {self._user.username}"
         )
         user_label.pack()
-        
+
         today_date = datetime.datetime.now().date()
         today_date_reformat = today_date.strftime("%d.%m.%Y")
         date_label = tk.Label(
-            master=self._frame, text = f"Date today:    {today_date_reformat}"
+            master=self._frame, text=f"Date today:    {today_date_reformat}"
         )
         date_label.pack()
 

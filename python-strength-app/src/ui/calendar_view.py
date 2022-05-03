@@ -4,7 +4,6 @@ from services.user_service import user_service
 import datetime
 
 
-
 class CalendarView:
     def __init__(self, root, press_login):
         self._root = root
@@ -28,7 +27,3 @@ class CalendarView:
 
         my_calendar = Calendar(master=self._frame)
         my_calendar.pack(pady=20)
-
-
-
-

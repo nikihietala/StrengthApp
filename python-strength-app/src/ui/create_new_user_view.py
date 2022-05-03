@@ -4,7 +4,18 @@ from services.user_service import UsernameExistsError, user_service, LengthError
 
 
 class CreateNewUserView:
+    """Uuden käyttäjän luonnista vastaava näkymä."""
+
     def __init__(self, root, press_back_to_login):
+        """Luokan konstruktori, joka luo uuden rekisteröitymisnäkymän.
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_back_to_login:
+                Kutsuttava arvo, jolla siirrytään takaisin kirjautumisnäkymään.
+            create_new_user:
+                Kutsuttava arvo, jolla luodaan uusi käyttäjä. Saa argumentteina käyttäjänimen ja salasanan.
+        """
         self._root = root
         self._frame = None
         self._press_back_to_login = press_back_to_login
@@ -13,9 +24,11 @@ class CreateNewUserView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _create_new_user(self):

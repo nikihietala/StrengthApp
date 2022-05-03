@@ -16,17 +16,24 @@ from ui.pull_up_view import PullUpView
 from ui.pull_up_data import PullUpData
 
 
-
-
 class UserInterface:
+    """Sovelluksen käyttöliittymästä vastaava luokka."""
+
     def __init__(self, root):
+        """Luokan konstruktori, joka luo uuden käyttöliittymästä vastaavan luokan.
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.            
+        """
         self._root = root
         self._current_view = None
 
     def start(self):
+        """Käynnistää käyttöliittymän."""
         self._show_login_view()
 
     def _hide_current_view(self):
+        """Piilottaa nykyisen näkymän."""
         if self._current_view:
             self._current_view.destroy()
 
@@ -37,7 +44,7 @@ class UserInterface:
 
     def _press_login(self):
         self._show_exercise_list_view()
-    
+
     def _press_calendar(self):
         self._show_calendar_view()
 
@@ -61,16 +68,16 @@ class UserInterface:
 
     def _press_squat_data(self):
         self._show_squat_data()
-    
+
     def _press_deadlift_data(self):
         self._show_deadlift_data()
-    
+
     def _press_bench_press_data(self):
         self._show_bench_press_data()
-    
+
     def _press_pull_up_data(self):
         self._show_pull_up_data()
-    
+
     def _press_shoulder_press_data(self):
         self._show_shoulder_press_data()
 
@@ -110,7 +117,7 @@ class UserInterface:
         )
 
         self._current_view.pack()
-    
+
     def _show_calendar_view(self):
         self._hide_current_view()
 
@@ -195,7 +202,7 @@ class UserInterface:
         )
 
         self._current_view.pack()
-    
+
     def _show_bench_press_data(self):
         self._hide_current_view()
 
@@ -225,5 +232,3 @@ class UserInterface:
         )
 
         self._current_view.pack()
-    
-    

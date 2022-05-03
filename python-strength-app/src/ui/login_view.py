@@ -4,7 +4,19 @@ from tkinter import messagebox
 
 
 class LoginView:
+    """Näkymä joka vastaa käyttäjän kirjautumisesta."""
+
     def __init__(self, root, press_create_new_user, press_login):
+        """Luokan konstruktori, joka luo kirjautumisnäkymän.
+
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_create_new_user:
+                Kutsuttava arvo, jolla siirrytään uuden käyttäjän rekisteröitymisnäkymään.
+            press_login:
+                Kutsuttava arvo, jolla kirjaudutaan sisään sovelluksen harjoituslista-näkymään.
+        """
         self._root = root
         self._frame = None
         self._press_create_new_user = press_create_new_user
@@ -12,12 +24,15 @@ class LoginView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _check_login(self):
+        """Tarkistaa onko käyttäjänimi ja salasana oikein."""
         username = self.username_entry.get()
         password = self.password_entry.get()
 

@@ -27,7 +27,7 @@ class ShoulderPressView:
         self._frame = tk.Frame(master=self._root)
 
         shoulder_press_text = tk.Label(master=self._frame,
-                              text="New Shoulder Press", font=("Arial", 14, "bold"))
+                                       text="New Shoulder Press", font=("Arial", 14, "bold"))
         shoulder_press_text.pack(side=tk.TOP, pady=1)
 
         date_text = tk.Label(master=self._frame, text="Date (day.month.year)")

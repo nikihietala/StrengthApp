@@ -27,7 +27,7 @@ class PullUpView:
         self._frame = tk.Frame(master=self._root)
 
         pull_up_text = tk.Label(master=self._frame,
-                              text="New Pull Up", font=("Arial", 14, "bold"))
+                                text="New Pull Up", font=("Arial", 14, "bold"))
         pull_up_text.pack(side=tk.TOP, pady=1)
 
         date_text = tk.Label(master=self._frame, text="Date (day.month.year)")
@@ -87,4 +87,3 @@ class PullUpView:
         else:
             messagebox.showerror("Cancel", "Result not saved")
             return
-
