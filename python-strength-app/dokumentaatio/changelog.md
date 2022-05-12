@@ -17,5 +17,9 @@
 - UserService-luokka testattu
 
 ### Viikko 6
-- Käyttäjä voi kirjata ja katsoa kaikkia voimailuliikkeitä
+- Käyttäjä voi kirjata ja katsoa kaikkia voimailuliikkeitä (5/5)
 - Käyttäjä voi avata kalenterin
+
+## Viikko 7 & 8
+- Käyttäjä näkee kalenterista päivät, jolloin hän on harjoitellut
+- Käyttäjä näkee jokaisen voimailuliikkeen kohdalla hänen maksimisuorituksen (suurin paino)
