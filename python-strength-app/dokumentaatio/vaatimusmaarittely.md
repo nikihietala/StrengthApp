@@ -46,12 +46,12 @@ Aloitusvalikosta voi siirtyä valitsemansa liikeeseen, jossa voi tallentaa uuden
 	- Kaverit näkisivät toistensa suoritukset
 - Käyttäjätunnuksen voisi poistaa
 - Suorituksia voisi tarkastella
-	- Esim. ilmoittaisi kyseisen liikkeen parhaan suorituksen
+	- Esim. ilmoittaisi kyseisen liikkeen parhaan suorituksen [TEHTY]
 	- Esim. luoda kehityskäyrä kaikista listan suorituksesta joka visualisoi suoritukset
 	- Esim. nähdä yhteenveto kuinka usein on tehnyt suorituksia
 - Urheilusuorituksia voisi suodattaa, että esim. käyttäjä voi valita omat vaihtoehdot joita seurata ja nähdä valikossa vain vaitsemansa vaihtoehdot.
 - Sovellus tarjoaisi myös kalenterin [TEHTY]
-	- Kalenterissa näkyisi päivät jolloin on treenannut
+	- Kalenterissa näkyisi päivät jolloin on treenannut [TEHTY]
 - Sovellukseen voisi lisätä myös muita urheilusuorituksia
 	- Nämä urheilusuoritukset näkyisi myös kalentereissa
 	 - Esim. kuntosalitreenit omalla värillä, jokin muu urheilusuoritus (esim. jalkapallo) omalla värillä
