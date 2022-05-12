@@ -73,7 +73,7 @@ class PullUpView:
                 return
             if not re.fullmatch(allowed, self._weight_entry.get()):
                 messagebox.showerror(
-                    "Error", "Weight has to be a positive number (E.g. 80)")
+                    "Error", "Weight has to be a positive number (E.g. 20), round to nearest whole number. If pull ups with only bodyweight, write 0")
                 return
             if not re.fullmatch(allowed, self._rep_entry.get()):
                 messagebox.showerror(

@@ -2,6 +2,7 @@ from csv import *
 import tkinter as tk
 from file_reader import shoulder_press_file_path
 from services.user_service import user_service
+from repositories.exercise_repository import ExerciseRepository
 
 
 class ShoulderPressData:
@@ -11,6 +12,7 @@ class ShoulderPressData:
         self._user = user_service.get_user()
         self._press_login = press_login
         self._shoulder_press_file_path = shoulder_press_file_path
+        self._user_data = ExerciseRepository()._user_data
         self._initialize()
 
     def pack(self):
@@ -30,17 +32,10 @@ class ShoulderPressData:
             master=self._frame, text="Shoulder Press results")
         shoulder_press_text.pack(side=tk.TOP, anchor=tk.NW)
 
-        self._read()
-
-    def _read(self):
-        with open(self._shoulder_press_file_path, "r", newline="") as data:
-            Reader = reader(data)
-            data = list(Reader)
-            user_data = []
-            for item in data[1:]:
-                if item[3] == f"{self._user.username}":
-                    user_data.append(item[0:3])
-            var = tk.StringVar(value=user_data)
-            listbox = tk.Listbox(master=self._frame,
-                                 listvariable=var, width=30)
-            listbox.pack()
+        ExerciseRepository.read_shoulder_press(self)
+        var = tk.StringVar(value=self._user_data)
+        listbox = tk.Listbox(master=self._frame,
+                                listvariable=var, width=30)
+        listbox.pack()
+        max_shoulder_press_text = tk.Label(master=self._frame, text=f"Your maximum weight in shoulder press is: {self.max_shoulder_press_weight} kg")
+        max_shoulder_press_text.pack(side=tk.TOP, anchor=tk.NW)

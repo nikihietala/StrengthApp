@@ -2,6 +2,7 @@ from csv import *
 import tkinter as tk
 from file_reader import pull_up_file_path
 from services.user_service import user_service
+from repositories.exercise_repository import ExerciseRepository
 
 
 class PullUpData:
@@ -11,6 +12,7 @@ class PullUpData:
         self._user = user_service.get_user()
         self._press_login = press_login
         self._pull_up_file_path = pull_up_file_path
+        self._user_data = ExerciseRepository()._user_data
         self._initialize()
 
     def pack(self):
@@ -29,17 +31,10 @@ class PullUpData:
         pull_up_text = tk.Label(master=self._frame, text="Pull Up results")
         pull_up_text.pack(side=tk.TOP, anchor=tk.NW)
 
-        self._read()
-
-    def _read(self):
-        with open(self._pull_up_file_path, "r", newline="") as data:
-            Reader = reader(data)
-            data = list(Reader)
-            user_data = []
-            for item in data[1:]:
-                if item[3] == f"{self._user.username}":
-                    user_data.append(item[0:3])
-            var = tk.StringVar(value=user_data)
-            listbox = tk.Listbox(master=self._frame,
-                                 listvariable=var, width=30)
-            listbox.pack()
+        ExerciseRepository.read_pull_up(self)
+        var = tk.StringVar(value=self._user_data)
+        listbox = tk.Listbox(master=self._frame,
+                                listvariable=var, width=30)
+        listbox.pack()
+        max_pull_up_text = tk.Label(master=self._frame, text=f"Your maximum weight in squat is: {self.max_pull_up_weight} kg")
+        max_pull_up_text.pack(side=tk.TOP, anchor=tk.NW)

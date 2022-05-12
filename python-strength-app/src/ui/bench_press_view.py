@@ -73,7 +73,7 @@ class BenchPressView:
                 return
             if not re.fullmatch(allowed, self._weight_entry.get()):
                 messagebox.showerror(
-                    "Error", "Weight has to be a positive number (E.g. 80)")
+                    "Error", "Weight has to be a positive number (E.g. 80), round to nearest whole number")
                 return
             if not re.fullmatch(allowed, self._rep_entry.get()):
                 messagebox.showerror(
