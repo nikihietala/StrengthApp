@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin uusin lähdekoodi "Loppurelease" [täältä](https://github.com/nikihietala/ot-harjoitustyo/releases) .
+Lataa projektin uusin lähdekoodi "Loppupalautus" [täältä](https://github.com/nikihietala/ot-harjoitustyo/releases) .
 
 ## Ohjelman käynnistäminen
 
