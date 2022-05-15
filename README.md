@@ -8,6 +8,7 @@ Sovelluksen avulla käyttäjät pystyvät kirjaamaan ja seuraamaan voimailulajie
 - [Arkkitehtuurikuvaus](/python-strength-app/dokumentaatio/arkkitehtuuri.md)
 - [Työaikakirjanpito](/python-strength-app/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](/python-strength-app/dokumentaatio/changelog.md)
+- [Testaus](/python-strength-app/dokumentaatio/testaus.md)
 
 ## Asennus
 
