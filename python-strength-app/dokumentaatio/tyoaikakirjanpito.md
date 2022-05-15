@@ -14,4 +14,5 @@
 | *2.5* |1        | ui muutoksia, kaikki näkymät toimii (squat/deadlift/benchpress/shoulderpress/pullup) |
 | *3.5* |4        | käyttäjä pääsee kalenterinäkymään, docstring aloitettu, arkkitehtuurikuvausta jatkettu |
 | *12.5*|2        | käyttäjä näkee kalenterista milloin harjoitellut, refaktorointia |
-| *yht* |35       | 
+| *12.5*|4        | koodin siistimistä, dokumentaatiota |
+| *yht* |39       | 
