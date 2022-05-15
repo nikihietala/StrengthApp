@@ -8,7 +8,18 @@ from services.user_service import user_service
 
 
 class SquatView:
+    """Uuden kyykky-tuloksen lisäämisestä vastaava näkymä."""
     def __init__(self, root, press_login, press_squat_data):
+        """Luokan konstruktori. Luo kyykky-tuloksen lisäämisnäkymän.
+
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_login:
+                Kutsuttava arvo, jolla siirrytään takaisin sovelluksen harjoituslistanäkymään.
+            press_squat_data:
+                Kutsuttava arvo, jolla siirrytään kyykky-tulosten katselunäkymään.
+        """
         self._root = root
         self._frame = None
         self._user = user_service.get_user()
@@ -18,9 +29,11 @@ class SquatView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _initialize(self):
@@ -61,6 +74,7 @@ class SquatView:
         back_button.pack(pady=10)
 
     def _write_to_file(self):
+        """Kirjoittaa käyttäjän kirjoittaman tuloksen ylös squat.csv tiedostoon."""
         confirmation = messagebox.askquestion("Confirm", "You are about to enter the following data\n" + "Date: " + self._date_entry.get(
         ) + "\n" + "Best Rep: " + self._rep_entry.get() + "\n" + "Weight: " + self._weight_entry.get())
         allowed = re.compile(r"[0-9]+")

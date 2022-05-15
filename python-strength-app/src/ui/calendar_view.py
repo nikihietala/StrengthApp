@@ -7,7 +7,16 @@ from repositories.exercise_repository import ExerciseRepository
 
 
 class CalendarView:
+    """Kalenterista vastaava näkymä."""
     def __init__(self, root, press_login):
+        """Luokan konstruktori. Luo kalenterinäkymän.
+
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_login:
+                Kutsuttava arvo, jolla siirrytään takaisin sovelluksen harjoituslistanäkymään.
+        """
         self._root = root
         self._frame = None
         self._user = user_service.get_user()
@@ -18,12 +27,19 @@ class CalendarView:
         self._pull_up_file_path = pull_up_file_path
         self._user_data = ExerciseRepository()._user_data
         self._press_login = press_login
+        ExerciseRepository.read_squat(self)
+        ExerciseRepository.read_deadlift(self)
+        ExerciseRepository.read_bench_press(self)
+        ExerciseRepository.read_shoulder_press(self)
+        ExerciseRepository.read_pull_up(self)
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _initialize(self):
@@ -39,11 +55,6 @@ class CalendarView:
         my_calendar = Calendar(master=self._frame)
         my_calendar.pack(pady=10)
 
-        ExerciseRepository.read_squat(self)
-        ExerciseRepository.read_deadlift(self)
-        ExerciseRepository.read_bench_press(self)
-        ExerciseRepository.read_shoulder_press(self)
-        ExerciseRepository.read_pull_up(self)
 
         for date in self.squat_dates:
             my_calendar.calevent_create(datetime.datetime.strptime(date, '%d.%m.%Y'), "", tags="training day")

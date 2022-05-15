@@ -6,7 +6,16 @@ from repositories.exercise_repository import ExerciseRepository
 
 
 class PullUpData:
+    """Leuanveto-tulosten tarkastelua vastaava näkymä."""
     def __init__(self, root, press_login):
+        """Luokan konstruktori. Luo leuanveto-tulosten tarkastelunäkymän.
+
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_login:
+                Kutsuttava arvo, jolla siirrytään takaisin sovelluksen harjoituslistanäkymään.
+        """
         self._root = root
         self._frame = None
         self._user = user_service.get_user()
@@ -16,9 +25,11 @@ class PullUpData:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _initialize(self):
@@ -36,5 +47,5 @@ class PullUpData:
         listbox = tk.Listbox(master=self._frame,
                                 listvariable=var, width=30)
         listbox.pack()
-        max_pull_up_text = tk.Label(master=self._frame, text=f"Your maximum weight in squat is: {self.max_pull_up_weight} kg")
+        max_pull_up_text = tk.Label(master=self._frame, text=f"Your maximum weight in pull ups is: {self.max_pull_up_weight} kg")
         max_pull_up_text.pack(side=tk.TOP, anchor=tk.NW)

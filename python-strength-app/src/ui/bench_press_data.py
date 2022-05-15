@@ -6,7 +6,16 @@ from repositories.exercise_repository import ExerciseRepository
 
 
 class BenchPressData:
+    """Penkkipunnerus-tulosten tarkastelua vastaava näkymä."""
     def __init__(self, root, press_login):
+        """Luokan konstruktori. Luo penkkipunnerrus-tulosten tarkastelunäkymän.
+
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_login:
+                Kutsuttava arvo, jolla siirrytään takaisin sovelluksen harjoituslistanäkymään.
+        """
         self._root = root
         self._frame = None
         self._user = user_service.get_user()
@@ -16,9 +25,11 @@ class BenchPressData:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _initialize(self):
@@ -37,5 +48,5 @@ class BenchPressData:
         listbox = tk.Listbox(master=self._frame,
                                 listvariable=var, width=30)
         listbox.pack()
-        max_bench_press_text = tk.Label(master=self._frame, text=f"Your maximum weight in squat is: {self.max_bench_press_weight} kg")
+        max_bench_press_text = tk.Label(master=self._frame, text=f"Your maximum weight in bench press is: {self.max_bench_press_weight} kg")
         max_bench_press_text.pack(side=tk.TOP, anchor=tk.NW)

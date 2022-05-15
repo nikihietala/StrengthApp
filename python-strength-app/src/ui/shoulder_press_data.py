@@ -6,7 +6,16 @@ from repositories.exercise_repository import ExerciseRepository
 
 
 class ShoulderPressData:
+    """Pystypunnerrus-tulosten tarkastelua vastaava näkymä."""
     def __init__(self, root, press_login):
+        """Luokan konstruktori. Luo pystypunnerrus-tulosten tarkastelunäkymän.
+
+        Args:
+            root:
+                TKinter-elementti, joka vastaa Tkinter-ikkunasta.
+            press_login:
+                Kutsuttava arvo, jolla siirrytään takaisin sovelluksen harjoituslistanäkymään.
+        """
         self._root = root
         self._frame = None
         self._user = user_service.get_user()
@@ -16,9 +25,11 @@ class ShoulderPressData:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=tk.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _initialize(self):

@@ -5,7 +5,9 @@ from services.user_service import user_service
 
 
 class ExerciseRepository:
+    """Käyttäjien kirjaamista harjoitus-tuloksista vastaava luokka."""
     def __init__(self):
+        """Luokan konstruktori."""
         self._user = user_service.get_user()
         self._squat_file_path = squat_file_path
         self._deadlift_file_path = deadlift_file_path
@@ -18,6 +20,7 @@ class ExerciseRepository:
 
 
     def read_squat(self):
+        """Käy läpi kyykky-harjoituksen sisällön lukemalla kyseisen csv-tiedoston."""
         with open(self._squat_file_path, "r", newline="") as data:
             Reader = reader(data)
             data = list(Reader)
@@ -32,6 +35,7 @@ class ExerciseRepository:
             
 
     def read_deadlift(self):
+        """Käy läpi maastaveto-harjoituksen sisällön lukemalla kyseisen csv-tiedoston."""
         with open(self._deadlift_file_path, "r", newline="") as data:
             Reader = reader(data)
             data = list(Reader)
@@ -45,6 +49,7 @@ class ExerciseRepository:
                 self.deadlift_dates.append(item[0])
 
     def read_bench_press(self):
+        """Käy läpi penkkipunnerrus-harjoituksen sisällön lukemalla kyseisen csv-tiedoston."""
         with open(self._bench_press_file_path, "r", newline="") as data:
             Reader = reader(data)
             data = list(Reader)
@@ -58,6 +63,7 @@ class ExerciseRepository:
                 self.bench_press_dates.append(item[0])
 
     def read_shoulder_press(self):
+        """Käy läpi pystypunnerrus-harjoituksen sisällön lukemalla kyseisen csv-tiedoston."""
         with open(self._shoulder_press_file_path, "r", newline="") as data:
             Reader = reader(data)
             data = list(Reader)
@@ -71,6 +77,7 @@ class ExerciseRepository:
                 self.shoulder_press_dates.append(item[0])
 
     def read_pull_up(self):
+        """Käy läpi leuanveto-harjoituksen sisällön lukemalla kyseisen csv-tiedoston."""
         with open(self._pull_up_file_path, "r", newline="") as data:
             Reader = reader(data)
             data = list(Reader)
