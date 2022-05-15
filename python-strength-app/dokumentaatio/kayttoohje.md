@@ -1,5 +1,7 @@
 # Käyttöohje
 
+Lataa projektin uusin lähdekoodi "Loppurelease" [täältä](https://github.com/nikihietala/ot-harjoitustyo/releases) .
+
 ## Ohjelman käynnistäminen
 
 Ennen ohjelman käynnistämistä, avaa terminaalissa python-strength-app tiedosto ja asenna riippuvuudet komennolla:
@@ -24,7 +26,7 @@ poetry run invoke start
 
 Sovellus käynnistyy kirjautumisnäkymään:
 
-_kuva tulee myöhemmin_
+![](./kuvat/kirjautumisnakyma.png)
 
 Kirjautuminen onnistuu syöttämällä käyttäjätunnus & salasana, ja painamalla "LOGIN" painiketta.
 
@@ -40,19 +42,37 @@ Sovellus ilmoittaa jos käyttäjätunnuksen luonti ei onnistu, jolloin täytyy t
 	- Käyttäjätunnus oltava vähintään 4 merkkiä
 	- Salasana oltava vähintään 6 merkkiä
 
-_kuva tulee myöhemmin_
+![](./kuvat/uudenkayttajanluonti.png)
 
 ## Urheiluharjoituksen valitseminen
 
-_tulee myöhemmin_
+Onnistuneen kirjautumisen jälkeen siirrytään urheilulista-näkymään:
+
+![](./kuvat/urheilulista.png)
+
+Käyttäjä voi valita halutun harjoituksen painalla valitsemansa harjoituksen painiketta (Esim. Squat), tai siirtyä kalenterinäkymään painamalla "Open calendar". 
+"BACK TO LOGIN"-painike kirjaa käyttäjän ulos sovelluksesta, ja sovellus palaa takaisin kirjautumisnäkymään.
 
 ## Uuden harjoituksen kirjaaminen
 
-_tulee myöhemmin_
+Käyttäjä voi kirjata uuden harjoitus-tuloksen täyttämällä kentät (Date / Best rep / Weight). Date (päivämäärä) annetaan muodossa päivä.kuukausi.vuosi (eli esim. 15.5.2022). Best rep (parhaan sarjan toistomäärä) annetaan numerona. Weight (paino) annetaan myös numerona. 
+Tiedot tallennetaan painamalla "SAVE RESULT"-painiketta, jolloin sovellus ilmoittaa jos kentät eivät ole täytetty ohjeiden mukaisesti. Sovellus myös ilmoittaa jos tallennus onnistui. "PAST RESULTS" painike vie kyseisen harjoituksen tulosten tarkastelunäkymään. 
+"BACK TO EXERCISE LIST"-painike vie takaisin urheilulista-näkymään.
 
-## Menneiden harjoitusten tarkastelu
+![](./kuvat/uusikyykkyharjoitus.png)
 
-_tulee myöhemmin_
+## Aikaisempien harjoitusten tarkastelu
+
+Käyttäjä näkee listassa kaikki aiemmat kyseisen harjoituksen listatut tulokset. Alhaalla myös lukee suurin paino, jolla on tehty kyseisen harjoitus. "BACK TO EXERCISE LIST"-painike vie takaisin urheilulista-näkymään.
+
+![](./kuvat/aikaisemmatharjoitukset.png)
+
+## Kalenterinäkymä
+
+Käyttäjä näkee kalenterin, johon on merkitty vihreällä värillä päivät, jolloin käyttäjä on treenannut (eli ne päivät jolloin on listattu harjoitustulos ylös). Kalenterista klikattu päivä näkyy sinisellä värillä. 
+"BACK TO EXERCISE LIST"-painike vie takaisin urheilulista-näkymään.
+
+![](./kuvat/urheilukalenteri.png)
 
 
 
