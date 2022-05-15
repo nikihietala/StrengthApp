@@ -7,6 +7,7 @@ from repositories.exercise_repository import ExerciseRepository
 
 class SquatData:
     """Kyykky-tulosten tarkastelua vastaava näkymä."""
+
     def __init__(self, root, press_login):
         """Luokan konstruktori. Luo kyykky-tulosten tarkastelunäkymän.
 
@@ -22,6 +23,8 @@ class SquatData:
         self._press_login = press_login
         self._squat_file_path = squat_file_path
         self._user_data = ExerciseRepository()._user_data
+        self.max_squat_weight = 0
+        self.squat_dates = []
         ExerciseRepository.read_squat(self)
         self._initialize()
 
@@ -45,7 +48,8 @@ class SquatData:
 
         var = tk.StringVar(value=self._user_data)
         listbox = tk.Listbox(master=self._frame,
-                                listvariable=var, width=30)
+                             listvariable=var, width=30)
         listbox.pack()
-        max_squat_text = tk.Label(master=self._frame, text=f"Your maximum weight in squat is: {self.max_squat_weight} kg")
+        max_squat_text = tk.Label(
+            master=self._frame, text=f"Your maximum weight in squat is: {self.max_squat_weight} kg")
         max_squat_text.pack(side=tk.TOP, anchor=tk.NW)

@@ -9,6 +9,7 @@ from services.user_service import user_service
 
 class PullUpView:
     """Uuden leuanveto-tuloksen lisäämisestä vastaava näkymä."""
+
     def __init__(self, root, press_login, press_pull_up_data):
         """Luokan konstruktori. Luo leuanveto-tuloksen lisäämisnäkymän.
 

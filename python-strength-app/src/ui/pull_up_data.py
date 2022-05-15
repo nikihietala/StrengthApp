@@ -7,6 +7,7 @@ from repositories.exercise_repository import ExerciseRepository
 
 class PullUpData:
     """Leuanveto-tulosten tarkastelua vastaava näkymä."""
+
     def __init__(self, root, press_login):
         """Luokan konstruktori. Luo leuanveto-tulosten tarkastelunäkymän.
 
@@ -22,6 +23,9 @@ class PullUpData:
         self._press_login = press_login
         self._pull_up_file_path = pull_up_file_path
         self._user_data = ExerciseRepository()._user_data
+        self.max_pull_up_weight = 0
+        self.pull_up_dates = []
+        ExerciseRepository.read_pull_up(self)
         self._initialize()
 
     def pack(self):
@@ -42,10 +46,10 @@ class PullUpData:
         pull_up_text = tk.Label(master=self._frame, text="Pull Up results")
         pull_up_text.pack(side=tk.TOP, anchor=tk.NW)
 
-        ExerciseRepository.read_pull_up(self)
         var = tk.StringVar(value=self._user_data)
         listbox = tk.Listbox(master=self._frame,
-                                listvariable=var, width=30)
+                             listvariable=var, width=30)
         listbox.pack()
-        max_pull_up_text = tk.Label(master=self._frame, text=f"Your maximum weight in pull ups is: {self.max_pull_up_weight} kg")
+        max_pull_up_text = tk.Label(
+            master=self._frame, text=f"Your maximum weight in pull ups is: {self.max_pull_up_weight} kg")
         max_pull_up_text.pack(side=tk.TOP, anchor=tk.NW)

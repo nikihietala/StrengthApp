@@ -9,6 +9,7 @@ from services.user_service import user_service
 
 class ShoulderPressView:
     """Uuden pystypunnerrus-tuloksen lisäämisestä vastaava näkymä."""
+
     def __init__(self, root, press_login, press_shoulder_press_data):
         """Luokan konstruktori. Luo pystypunnerrus-tuloksen lisäämisnäkymän.
 

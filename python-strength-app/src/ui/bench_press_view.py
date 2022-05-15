@@ -9,6 +9,7 @@ from services.user_service import user_service
 
 class BenchPressView:
     """Uuden penkkipunnerrus-tuloksen lisäämisestä vastaava näkymä."""
+
     def __init__(self, root, press_login, press_bench_press_data):
         """Luokan konstruktori. Luo penkkipunnerrus-tuloksen lisäämisnäkymän.
 

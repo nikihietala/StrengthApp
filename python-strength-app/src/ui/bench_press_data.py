@@ -7,6 +7,7 @@ from repositories.exercise_repository import ExerciseRepository
 
 class BenchPressData:
     """Penkkipunnerus-tulosten tarkastelua vastaava näkymä."""
+
     def __init__(self, root, press_login):
         """Luokan konstruktori. Luo penkkipunnerrus-tulosten tarkastelunäkymän.
 
@@ -22,6 +23,9 @@ class BenchPressData:
         self._press_login = press_login
         self._bench_press_file_path = bench_press_file_path
         self._user_data = ExerciseRepository()._user_data
+        self.max_bench_press_weight = 0
+        self.bench_press_dates = []
+        ExerciseRepository.read_bench_press(self)
         self._initialize()
 
     def pack(self):
@@ -43,10 +47,10 @@ class BenchPressData:
             master=self._frame, text="Bench Press results")
         bench_press_text.pack(side=tk.TOP, anchor=tk.NW)
 
-        ExerciseRepository.read_bench_press(self)
         var = tk.StringVar(value=self._user_data)
         listbox = tk.Listbox(master=self._frame,
-                                listvariable=var, width=30)
+                             listvariable=var, width=30)
         listbox.pack()
-        max_bench_press_text = tk.Label(master=self._frame, text=f"Your maximum weight in bench press is: {self.max_bench_press_weight} kg")
+        max_bench_press_text = tk.Label(
+            master=self._frame, text=f"Your maximum weight in bench press is: {self.max_bench_press_weight} kg")
         max_bench_press_text.pack(side=tk.TOP, anchor=tk.NW)

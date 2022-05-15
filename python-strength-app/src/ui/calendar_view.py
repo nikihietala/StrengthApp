@@ -8,6 +8,7 @@ from repositories.exercise_repository import ExerciseRepository
 
 class CalendarView:
     """Kalenterista vastaava näkymä."""
+
     def __init__(self, root, press_login):
         """Luokan konstruktori. Luo kalenterinäkymän.
 
@@ -27,6 +28,16 @@ class CalendarView:
         self._pull_up_file_path = pull_up_file_path
         self._user_data = ExerciseRepository()._user_data
         self._press_login = press_login
+        self.squat_dates = []
+        self.max_squat_weight = 0
+        self.max_deadlift_weight = 0
+        self.deadlift_dates = []
+        self.max_bench_press_weight = 0
+        self.bench_press_dates = []
+        self.max_shoulder_press_weight = 0
+        self.shoulder_press_dates = []
+        self.max_pull_up_weight = 0
+        self.pull_up_dates = []
         ExerciseRepository.read_squat(self)
         ExerciseRepository.read_deadlift(self)
         ExerciseRepository.read_bench_press(self)
@@ -49,34 +60,34 @@ class CalendarView:
             master=self._frame, text="BACK TO EXERCISE LIST", command=self._press_login)
         back_button.pack(pady=10)
 
-        colour_text = tk.Label(master=self._frame, text="The days you have been training are coloured in green.")
+        colour_text = tk.Label(
+            master=self._frame, text="The days you have been training are coloured in green.")
         colour_text.pack(side=tk.TOP, anchor=tk.NW)
 
         my_calendar = Calendar(master=self._frame)
         my_calendar.pack(pady=10)
 
-
         for date in self.squat_dates:
-            my_calendar.calevent_create(datetime.datetime.strptime(date, '%d.%m.%Y'), "", tags="training day")
+            my_calendar.calevent_create(datetime.datetime.strptime(
+                date, '%d.%m.%Y'), "", tags="training day")
             my_calendar.tag_config("training day", background="green")
-        
+
         for date in self.deadlift_dates:
-            my_calendar.calevent_create(datetime.datetime.strptime(date, '%d.%m.%Y'), "", tags="training day")
+            my_calendar.calevent_create(datetime.datetime.strptime(
+                date, '%d.%m.%Y'), "", tags="training day")
             my_calendar.tag_config("training day", background="green")
 
         for date in self.bench_press_dates:
-            my_calendar.calevent_create(datetime.datetime.strptime(date, '%d.%m.%Y'), "", tags="training day")
+            my_calendar.calevent_create(datetime.datetime.strptime(
+                date, '%d.%m.%Y'), "", tags="training day")
             my_calendar.tag_config("training day", background="green")
 
         for date in self.shoulder_press_dates:
-            my_calendar.calevent_create(datetime.datetime.strptime(date, '%d.%m.%Y'), "", tags="training day")
+            my_calendar.calevent_create(datetime.datetime.strptime(
+                date, '%d.%m.%Y'), "", tags="training day")
             my_calendar.tag_config("training day", background="green")
 
         for date in self.pull_up_dates:
-            my_calendar.calevent_create(datetime.datetime.strptime(date, '%d.%m.%Y'), "", tags="training day")
+            my_calendar.calevent_create(datetime.datetime.strptime(
+                date, '%d.%m.%Y'), "", tags="training day")
             my_calendar.tag_config("training day", background="green")
-
-
-
-
-

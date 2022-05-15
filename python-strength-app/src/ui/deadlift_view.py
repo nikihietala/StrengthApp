@@ -9,6 +9,7 @@ from services.user_service import user_service
 
 class DeadliftView:
     """Uuden maastaveto-tuloksen lisäämisestä vastaava näkymä."""
+
     def __init__(self, root, press_login, press_deadlift_data):
         """Luokan konstruktori. Luo penkkipunnerrus-tuloksen lisäämisnäkymän.
 

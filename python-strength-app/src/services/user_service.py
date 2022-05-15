@@ -16,6 +16,7 @@ class LengthError(Exception):
 
 class UserService:
     """Käyttäjän sovelluslogiikasta vastaava luokka"""
+
     def __init__(self, user_repository=user_rep):
         """Luokan konstruktori. Luo uuden palvelun käyttäjän sovelluslogiikkaa varten.
 
@@ -35,8 +36,10 @@ class UserService:
                 Oletusarvo True.
                 Boolean-arvo, joka kertoo onnistuuko kirjautuminen.
         Raises:
-            LengthError: Virhe, joka tapahtuu jos käyttäjätunnus tai salasana ovat liian lyhyitä.
-            UsernameExistsError: Virhe, joka tapahtuu jos käyttäjän valitsema käyttäjätunnus on jo käytössä.
+            LengthError:
+                Virhe, joka tapahtuu jos käyttäjätunnus tai salasana ovat liian lyhyitä.
+            UsernameExistsError:
+                Virhe, joka tapahtuu jos käyttäjän valitsema käyttäjätunnus on jo käytössä.
         Returns:
             Luotu käyttäjä (User-olio).
         """
@@ -60,9 +63,9 @@ class UserService:
             username: käyttäjän luoma käyttäjätunnus
             password: käyttäjän luoma salasana
         Raises:
-            LoginError: Virhe, joka tapahtuu jos käyttäjätunnus tai salasana on väärin.  
+            LoginError: Virhe, joka tapahtuu jos käyttäjätunnus tai salasana on väärin.
         Returns:
-            Kirjautunut käyttäjä (User-olio).    
+            Kirjautunut käyttäjä (User-olio).
         """
         user = self._user_repository.find_by_username(username)
 
@@ -76,7 +79,7 @@ class UserService:
         """Palauttaa nykyisen käyttäjän.
 
         Returns:
-            Kirjautunut käyttäjä (User-olio). 
+            Kirjautunut käyttäjä (User-olio).
         """
         return self._user
 

@@ -7,6 +7,7 @@ from repositories.exercise_repository import ExerciseRepository
 
 class ShoulderPressData:
     """Pystypunnerrus-tulosten tarkastelua vastaava näkymä."""
+
     def __init__(self, root, press_login):
         """Luokan konstruktori. Luo pystypunnerrus-tulosten tarkastelunäkymän.
 
@@ -22,6 +23,9 @@ class ShoulderPressData:
         self._press_login = press_login
         self._shoulder_press_file_path = shoulder_press_file_path
         self._user_data = ExerciseRepository()._user_data
+        self.max_shoulder_press_weight = 0
+        self.shoulder_press_dates = []
+        ExerciseRepository.read_shoulder_press(self)
         self._initialize()
 
     def pack(self):
@@ -43,10 +47,10 @@ class ShoulderPressData:
             master=self._frame, text="Shoulder Press results")
         shoulder_press_text.pack(side=tk.TOP, anchor=tk.NW)
 
-        ExerciseRepository.read_shoulder_press(self)
         var = tk.StringVar(value=self._user_data)
         listbox = tk.Listbox(master=self._frame,
-                                listvariable=var, width=30)
+                             listvariable=var, width=30)
         listbox.pack()
-        max_shoulder_press_text = tk.Label(master=self._frame, text=f"Your maximum weight in shoulder press is: {self.max_shoulder_press_weight} kg")
+        max_shoulder_press_text = tk.Label(
+            master=self._frame, text=f"Your maximum weight in shoulder press is: {self.max_shoulder_press_weight} kg")
         max_shoulder_press_text.pack(side=tk.TOP, anchor=tk.NW)

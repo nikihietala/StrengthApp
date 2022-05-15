@@ -9,6 +9,7 @@ from services.user_service import user_service
 
 class SquatView:
     """Uuden kyykky-tuloksen lisäämisestä vastaava näkymä."""
+
     def __init__(self, root, press_login, press_squat_data):
         """Luokan konstruktori. Luo kyykky-tuloksen lisäämisnäkymän.
 

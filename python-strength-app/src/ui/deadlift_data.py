@@ -7,6 +7,7 @@ from repositories.exercise_repository import ExerciseRepository
 
 class DeadliftData:
     """Maastaveto-tulosten tarkastelua vastaava näkymä."""
+
     def __init__(self, root, press_login):
         """Luokan konstruktori. Luo maastaveto-tulosten tarkastelunäkymän.
 
@@ -22,6 +23,8 @@ class DeadliftData:
         self._press_login = press_login
         self._deadlift_file_path = deadlift_file_path
         self._user_data = ExerciseRepository()._user_data
+        self.max_deadlift_weight = 0
+        self.deadlift_dates = []
         ExerciseRepository.read_deadlift(self)
         self._initialize()
 
@@ -45,7 +48,8 @@ class DeadliftData:
 
         var = tk.StringVar(value=self._user_data)
         listbox = tk.Listbox(master=self._frame,
-                                listvariable=var, width=30)
+                             listvariable=var, width=30)
         listbox.pack()
-        max_deadlift_text = tk.Label(master=self._frame, text=f"Your maximum weight in deadlift is: {self.max_deadlift_weight} kg")
+        max_deadlift_text = tk.Label(
+            master=self._frame, text=f"Your maximum weight in deadlift is: {self.max_deadlift_weight} kg")
         max_deadlift_text.pack(side=tk.TOP, anchor=tk.NW)
